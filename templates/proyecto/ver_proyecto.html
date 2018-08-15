@@ -1,0 +1,115 @@
+<!--TOP-MENU inicio -->
+
+<!-- CONTENIDO MODULO inicio -->
+
+<div ng-include="'./templates/menu_lateral.html'"></div>
+
+    <div class="col-md-10 col-sm-10">
+    <div class="row">
+
+      <div class="col-md-12">
+        <h2 class="text-primary">
+		<span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+		{{ajustes.pagina.titulo}}
+		</h2>
+      </div>
+    </div>
+    	<div class="row">
+	              			<div class="col-md-12">
+	              				<div class="well well-sm">
+						            <div class="panel">
+						              	<h4 class="text-primary text-center">DATOS DEL PROYECTO</h4>
+						              	<hr class="bg-red">
+						              	<div class="panel-body">
+							                <div class="row">
+								                <div class="col-md-8">
+									               	<label class="control-label ">Titulo:</label><br/>
+									               	{{proyecto.titulo_proy}}
+								               	</div>
+								               	<div class="form-group col-md-4">
+								                  	<label for="sevref" class="control-label ">Alcance:<strong class="fg_red"> *</strong></label><br/>
+								                  	{{proyecto.alcance}}
+								                </div>  
+
+								                	<div class="form-group col-md-4">
+								                  	<label for="sevref" class="control-label ">Objetivo:<strong class="fg_red"> *</strong></label><br/>
+								                  	{{proyecto.obj_gen}}
+								                </div>  
+								                <div class="form-group col-md-4">
+								                  	<label for="sevref" class="control-label ">Fecha Inicio:<strong class="fg_red"> *</strong></label><br/>
+								                  	{{proyecto.fecha_inicio}}
+								                </div>   
+								                <div class="form-group col-md-4">
+								                  	<label for="sevref" class="control-label ">Fecha Inicio:<strong class="fg_red"> *</strong></label><br/>
+								                  	{{proyecto.fecha_fin}}
+								                </div> 
+
+								                <div class="form-group col-md-4">
+								                  	<label for="sevref" class="control-label ">Porcentaje de ejecucion:<strong class="fg_red"> *</strong></label><br/>
+								                  	{{proyecto.porc_ejec}}
+								                </div> 
+
+								                <div class="form-group col-md-4">
+								                  	<label for="sevref" class="control-label ">Tipo de servicio:<strong class="fg_red"> *</strong></label><br/>
+								                  	{{proyecto.tipo_servicio}}
+								                </div>
+
+								                <div class="form-group col-md-4">
+								                  	<label for="sevref" class="control-label ">Alcance:<strong class="fg_red"> *</strong></label><br/>
+								                  	{{proyecto.alcance}}
+								                </div>  
+
+						 					</div>
+
+
+  <div class="row">
+   <h4 class="text-primary">
+              DATOS DEL JEFE DEL PROYECTO
+          </h4>
+
+           <div class="form-group col-md-4">
+								                  	<label for="sevref" class="control-label ">Informacion:<strong class="fg_red"></strong></label><br/>
+								                  	{{usuario.nombres + '   '  + usuario.ap_pat +  '   ' +  usuario.ap_mat}}
+								                </div>  
+      </div>
+
+											
+						 				
+						           		 </div>
+						           	</div>
+							</div>
+					        
+
+						   
+	             	</div>
+	            </div>
+	        </div>
+
+<!--
+	        <a href="#!/proyecto/editar/{{proyecto.id_proy}}" class="btn btn-primary" title="EDITAR PROYECTO"><span class="glyphicon glyphicon-edit"> </span> EDITAR</a>
+
+
+	           <div>
+	           	<button ng-click="get_id_proy(proyecto.id_proy,proyecto.titulo_proy)" title="ELIMINAR PROYECTO" data-toggle="modal" class="btn btn-danger" data-target="#miCuadroModal1" ><span class="glyphicon glyphicon-remove"></span> ELIMINAR</button>
+                <div id="miCuadroModal1" class="modal fade" role="dialog" tabindex="-1">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header bg-red">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                        <h4 class="modal-title fg-white">ELIMINAR PROYECTO</h4>
+                      </div>
+                      <div class="modal-body lead text-center">
+                        ¿Está seguro que desea dar de baja a este proyecto?
+                        <div class="well well-sm"><strong>{{titulo_proy | uppercase}}</strong></div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> NO</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="remove(proyecto.id_proy)"><span class="glyphicon glyphicon-ok"></span> SI</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+                -->
+              
+	

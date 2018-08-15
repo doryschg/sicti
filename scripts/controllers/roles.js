@@ -1,0 +1,47 @@
+'use strict';
+angular.module("adminApp")
+// ************************* CONSTANTES *****************************************************************
+
+// ========================= CONFIGURACION ============================================================================
+//.constant('CONFIG', {
+  //ROL_CURRENT_USER: parseInt(localStorage.getItem("ROL_CURRENT_USER"), 10),//este es el usuario que esta logueado
+  //ROL_CURRENT_USER_NAME: localStorage.getItem("ROL_CURRENT_USER_NAME"),
+
+.constant('CONFIG', {
+DOMINIO_SERVICIOS: "http://localhost/api_sicti/public" })
+
+// ========================= ROLES ============================================================================
+/*.constant('ROLES', {
+   ADMIN_USACSIA: {
+    ROL:1,
+    PATH:"/"
+  },
+  JEFE_USACSIA: {
+    ROL:2,
+    PATH:"/"
+  }
+})
+
+.run(["$rootScope", "$location", "CONFIG", "ROLES",   function($rootScope, $location, CONFIG, ROLES){
+  $rootScope.$on('$routeChangeStart', function (event, next)
+  { 
+    console.log(next.data);
+    if(next.data !== undefined)
+    { 
+      if(next.data.authorized.indexOf(CONFIG.ROL_CURRENT_USER) !== -1)
+      {
+        //console.log("entra");
+      }
+      else
+      {
+        if (CONFIG.ROL_CURRENT_USER == 1) {
+          $location.path(ROLES.ADMIN_USACSIA.PATH);
+        }
+        else if (CONFIG.ROL_CURRENT_USER == 2) {
+          $location.path(ROLES.JEFE_USACSIA.PATH);
+        }
+        
+           }
+    }
+  });
+}])   */

@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="es" ng-app="adminApp">
+
+<head>
+
+	<title>	HEADER</title>
+
+		<!-- estilos propios -->
+	<link rel="stylesheet" type="text/css" href="./css/header.css">
+	<link rel="stylesheet" type="text/css" href="./fonts/glyphicons-halflings-regular.ttf">
+
+<meta charset="utf-8">
+
+<!--PARA CACHEO -->
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" /> 
+
+</head>
+
+<header>
+  	<div class='header-izquierda'>
+    <span class="header-texto"> <a href="#" >AdminLTE</a></span>
+    <div class='imagen-centro'>
+    <span class="imagen-navegar"><a href='#'>toggle navigation</a></span>
+    </div>
+   </div>
+
+   <div class='header-derecha'>
+    <a href="#"><span class='imagen-usuario'>imagen</span>
+    <span class='header-texto'>Juanita Lopez</span></a>
+    <a href='#'><span class='imagen-configurar'> configuracion</span></a>
+   </div>
+  </header>
+<body>
+
+	<div ng-view></div> 
+
+<!--	<footer>
+  	<span>Copyright © 2014-2016 Almsaeed Studio. All rights reserved. </span>
+  	<span>Version 2.4.0</span>
+  </footer>	 -->
+
+
+  <footer>
+  	<span>Copyright © 2014-2016 Almsaeed Studio. All rights reserved. </span>
+  	<span>Version 2.4.0</span>
+  </footer>	
+
+	<!--componenetes para angular-->
+	<link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+	<script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+	<script type="text/javascript" src="./node_modules/angular/angular.min.js" ></script>
+	<script type="text/javascript" src="./node_modules/angular-route/angular-route.min.js" ></script>
+	<script type="text/javascript" src="./node_modules/angular-resource/angular-resource.min.js" ></script>
+	<link rel="stylesheet" href="./node_modules/angular-toastr/dist/angular-toastr.css" />
+
+	<script type="text/javascript" src="./node_modules/angular-toastr/dist/angular-toastr.tpls.js"></script>
+
+	<!--<script type="text/javascript" src="./bower_components/moment/moment.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-moment/angular-moment.js"></script> -->
+
+	<!-- poner aqui todos los archios js que se creen para el proyecto         -->
+	<script type="text/javascript" src="./scripts/app.js" ></script>
+	
+	<script type="text/javascript" src="./scripts/controllers/proyectos.js" ></script>
+	<script type="text/javascript" src="./scripts/controllers/roles.js" ></script>
+
+	<script type="text/javascript" src="./scripts/services/Services.js" ></script>
+
+
+
+
+</body>
+
+ 
+
+</html>
