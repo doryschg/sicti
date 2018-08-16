@@ -1,0 +1,21 @@
+<!--TOP-MENU inicio -->
+
+<header  ng-controller="MenuCtrl as menu">
+  	<div class='header-izquierda' ng-hide="menu.isLoggedIn()">
+    <span class="header-texto"> <a href="#" >AdminLTE</a></span>
+    <div class='imagen-centro'>
+    <span class="imagen-navegar"><a href='#'>toggle navigation</a></span>
+    </div>
+   </div>
+
+   <div class='header-derecha'>
+    <a href="#"><span class='imagen-usuario'>imagen</span>
+    <span class='header-texto'>{{menu.user.username}}</span></a>
+<a href="#/perfil">
+<span class="glyphicon glyphicon-user" aria-hidden="true" ></span>Ver Perfil</a>
+<a href="#!/inicio" ng-click="menu.logout()">
+<span class="glyphicon glyphicon-off" aria-hidden="true" ></span>Cerrar sesion</a>
+			
+   </div>
+  </header>
+
