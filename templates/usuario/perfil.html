@@ -1,0 +1,46 @@
+
+<!-- TOP-MENU inicio -->
+<div ng-include="'./templates/menu_inicio.html'"></div>
+ 
+ <!-- CONTEXT-MENU -->
+<div ng-include="'./templates/menu_lateral.html'"></div>
+
+    <div class="row">
+		<div class="col-md-4">
+			<div class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+				<div class="profile-userpic">
+					<img src="./imagen/perfil.jpg" class="img-responsive" alt="">
+				</div>
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+			{{usuario.nombres +'   ' + usuario.ap_pat +'    '+ usuario.ap_mat}}
+	
+					</div>
+					<div class="profile-usertitle-job">
+						Investigador
+					</div>
+				</div>
+								<!-- END MENU -->
+			</div>
+		</div>
+		<div class="col-md-8">
+            	<h4 class="text-primary text-center">DATOS PERSONALES</h4>
+						              
+				 <div class="row">
+				    <div class="col-md-4">
+	               <label class="control-label ">CI:</label><br/>
+					{{usuario.ci   +'   '+ usuario.ext}}
+					</div>
+					<div class="col-md-4">
+				<label class="control-label ">Genero:<strong> </strong></label><br/>
+						{{sexo}}
+								  </div>  
+				<div class="col-md-4">
+				<label class="control-label ">Fecha de nacimiento:<strong > </strong></label><br/>
+						{{usuario.fecha_nac}}
+								  </div> 
+			  
+		</div>
+	</div>
+</div>

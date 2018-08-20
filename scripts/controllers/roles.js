@@ -12,8 +12,6 @@ DOMINIO_SERVICIOS: "http://localhost/api_sicti/public" })
 
 // ========================= ROLES ============================================================================
 
-
-
 .constant('ROLES', {
    ADMIN_ROOT: {
     ROL:1,
@@ -30,7 +28,7 @@ DOMINIO_SERVICIOS: "http://localhost/api_sicti/public" })
   
 })
 
-.run(["$rootScope", "$location", "CONFIG", "ROLES",   function($rootScope, $location, CONFIG, ROLES){
+.run(["$rootScope", "$location", "CONFIG", "ROLES", function($rootScope, $location, CONFIG, ROLES){
   $rootScope.$on('$routeChangeStart', function (event, next)
   { 
     /*console.log(next.data);*/

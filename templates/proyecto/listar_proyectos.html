@@ -11,7 +11,7 @@
         <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
         {{ajustes.pagina.titulo}}
       </h2>
-      <hr class="bg-red">
+      <hr class="bg-blue">
     </div>
   
   <H3> <p>Agregar nuevo proyecto :
@@ -77,13 +77,13 @@
                 <div id="miCuadroModal1" class="modal fade" role="dialog" tabindex="-1">
                   <div class="modal-dialog">
                     <div class="modal-content">
-                      <div class="modal-header bg-red">
+                      <div class="modal-header bg-blue">
                         <button type="button" class="close" data-dismiss="modal">×</button>
                         <h4 class="modal-title fg-white">ELIMINAR PROYECTO</h4>
                       </div>
                       <div class="modal-body lead text-center">
                         ¿Está seguro que desea dar de baja a este proyecto?
-                        <div class="well well-sm"><strong>{{titulo_proy | uppercase}}</strong></div>
+                        <div class="well well-sm"><strong>{{proyecto.titulo_proy | uppercase}}</strong></div>
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> NO</button>

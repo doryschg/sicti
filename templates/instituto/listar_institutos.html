@@ -1,0 +1,58 @@
+<!-- TOP-MENU inicio -->
+<div ng-include="'./templates/publico/menu_inicio.html'"></div>
+ 
+<div class="col-md-10 col-sm-10">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-primary">
+        <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+        {{ajustes.pagina.titulo}}
+      </h2>
+      <hr class="bg-red">
+    </div>
+  
+  </div>
+  <div class="row">
+    <div class="col-md-12 ">
+    
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover"id="table">
+          <thead >
+            <th class="text-primary" >
+              <a href="" ng-click="sortType = 'nombre_inst'; sortReverse = !sortReverse">Nombre</a>
+              <span ng-show="sortType == 'nombre_inst' && !sortReverse" class="glyphicon glyphicon-chevron-up"></span>
+              <span ng-show="sortType == 'nombre_inst' && sortReverse" class="glyphicon glyphicon-chevron-down"></span>
+            </th>
+            <th class="text-primary" >
+              <a href="" ng-click="sortType = 'fecha_crecion'; sortReverse = !sortReverse">Fecha de creacion 
+              <span ng-show="sortType == 'fecha_crecion' && !sortReverse" class="glyphicon glyphicon-chevron-up"></span>
+              <span ng-show="sortType == 'fecha_crecion' && sortReverse" class="glyphicon glyphicon-chevron-down"></span></a>
+            </th>
+            <th class="text-primary" >
+              <a href="" ng-click="sortType = 'resolucion'; sortReverse = !sortReverse">Resolucion
+              <span ng-show="sortType == 'resolucion' && !sortReverse" class="glyphicon glyphicon-chevron-up"></span>
+              <span ng-show="sortType == 'resolucion' && sortReverse" class="glyphicon glyphicon-chevron-down"></span></a>
+            </th>
+
+             <th class="text-primary" >
+              <a href="" ng-click="sortType = 'sigla'; sortReverse = !sortReverse">Sigla
+              <span ng-show="sortType == 'sigla' && !sortReverse" class="glyphicon glyphicon-chevron-up"></span>
+              <span ng-show="sortType == 'sigla' && sortReverse" class="glyphicon glyphicon-chevron-down"></span></a>
+            </th>
+
+          </thead>
+          <tbody>
+            <tr  ng-repeat="institutos in instituto  | filter:searchText | orderBy:sortType:sortReverse ">
+              <td>{{institutos.nombre_inst}}</td>
+              <td>{{institutos.fecha_creacion}} </td>
+              <td>{{institutos.resolucion}} </td> 
+              <td>{{institutos.sigla}} </td>  
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -2,14 +2,37 @@
 'use strict';
 angular.module("adminApp", ["authService","ngRoute","ngResource","toastr","satellizer"])
 
-.config(['$routeProvider','$authProvider','CONFIG', function ($routeProvider,$authProvider, CONFIG){
+.config(['$routeProvider','$authProvider','CONFIG','ROLES', function ($routeProvider,$authProvider, CONFIG,ROLES){
   $authProvider.loginUrl = CONFIG.DOMINIO_SERVICIOS+'/login';
   $routeProvider
 
 .when('/inicio', {
 		templateUrl: 'templates/publico/index.html'
-		//controller: 'ListarProyCtrl'
-	})  
+		
+	}) 
+.when('/', {
+    templateUrl: 'templates/usuario/index.html', 
+    controller: 'InicioCtrl'
+  }) 
+
+.when('/login', {
+    templateUrl: 'templates/login.html',
+    controller: 'LoginCtrl'
+  }) 
+
+.when('/perfil', {
+    templateUrl: 'templates/usuario/perfil.html',
+    controller: 'PerfilCtrl'
+  })
+
+// Institutos
+.when('/instituto', {
+    templateUrl: 'templates/instituto/listar_institutos.html',
+    controller: 'ListarInstitutoCtrl'
+  })
+
+
+
 
 // Proyectos
 	.when('/proyecto', {
@@ -32,10 +55,7 @@ angular.module("adminApp", ["authService","ngRoute","ngResource","toastr","satel
 		controller: 'EditarProyectoCtrl'
 	}) 
 
-.when('/login', {
-    templateUrl: 'templates/login.html',
-    controller: 'LoginCtrl'
-  }) 
+
 
 	.otherwise({ redirectTo: '/inicio'});
 }])  
