@@ -59,7 +59,7 @@ function ($scope, $routeParams,Proyectos,toastr, $route){
 
   $scope.proyecto={
     titulo_proy:"PROYECTO PRUEBA",
-    tipo_inv:"INVERSION",
+    tipo_inv:"",
     tipo_servicio:"SERVICIO",
     obj_gen:"GENERAL",
     alcance:"ALCANCE",
@@ -101,12 +101,26 @@ $scope.submit =function()
       });
   }
 
-    $scope.reset = function(form) {
+    $scope.tipo=false;
+
+  $scope.opcion_otro= function(tipo_inv)
+  {
+    console.log(tipo_inv+"tipo investigacion");
+
+    if(tipo_inv=="Otro")
+    {
+    $scope.tipo=true;
+    }
+    console.log($scope.tipo);
+  }
+
+ /*   $scope.reset = function(form) {
     if (form) {
       form.$setPristine();
       form.$setUntouched();
     }
-  };
+  }; */
+
 }])
 
 .controller('VerProyectoCtrl',['$scope', 'Proyectos','$routeParams', '$route', 'toastr', '$location','$timeout',

@@ -29,7 +29,7 @@
           <div class="row">
             <div class="col-md-6">
         				<div class="form-group">
-        				  <label for="titulo" class="control-label">Titulo: <strong class="fg_red">*</strong></label>
+        				  <label class="control-label">Titulo: <strong class="fg_red">*</strong></label>
         				  <input class="form-control" name="titulo" type="text" placeholder="Titulo del proyecto" ng-model="proyecto.titulo_proy" ng-model-options="{ updateOn: 'blur' }" required ng-pattern="patternCadenaNumero" autofocus>
         				  <span class="messages" ng-show="addProyecto.titulo.$touched">
         					<span ng-show="addProyecto.titulo.$error.required">El campo es obligatorio.</span>
@@ -39,7 +39,7 @@
             </div>    
             <div class="col-md-6">
         				<div class="form-group">
-        				  <label for="tipo" class="control-label">Tipo Servicio: <strong class="fg_red">*</strong></label>
+        				  <label  class="control-label">Tipo Servicio: <strong class="fg_red">*</strong></label>
         				  <input type="" class="form-control" name="tipo" placeholder="Tipo servicio" ng-model="proyecto.tipo_servicio" ng-model-options="{ updateOn: 'blur' }" required ng-pattern="patternCadenaNumero" >
         				  <span class="messages" ng-show="addProyecto.tipo.$touched">
         					<span ng-show="addProyecto.tipo.$error.required">El campo es obligatorio.</span>
@@ -52,7 +52,7 @@
           <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                  <label for="fecha_ini" class="control-label">Fecha Inicio: <strong class="fg_red">*</strong></label>
+                  <label class="control-label">Fecha Inicio: <strong class="fg_red">*</strong></label>
                   <input class="form-control" name="fecha_ini" type="date" ng-model="proyecto.fecha_inicio" ng-model-options="{ updateOn: 'blur' }" required ng-pattern="patternCadenaNumero" autofocus>
                   <span class="messages" ng-show="addProyecto.fecha_ini.$touched">
                   <span ng-show="addProyecto.fecha_ini.$error.required">El campo es obligatorio.</span>
@@ -61,7 +61,7 @@
             </div>    
             <div class="col-md-6">
                 <div class="form-group">
-                  <label for="fecha_fin" class="control-label">Fecha Finalizacion: <strong class="fg_red">*</strong></label>
+                  <label class="control-label">Fecha Finalizacion: <strong class="fg_red">*</strong></label>
                   <input type="date" class="form-control" name="fecha_fin" ng-model="proyecto.fecha_fin" ng-model-options="{ updateOn: 'blur' }" required ng-pattern="patternCadenaNumero" >
                   <span class="messages" ng-show="addProyecto.fecha_fin.$touched">
                   <span ng-show="addProyecto.fecha_fin.$error.required">El campo es obligatorio.</span>
@@ -70,19 +70,36 @@
             </div>
           </div>
 
-           <div class="row">
-            <div class="col-md-6">
+      <div class="row">
+
+        <div class="col-md-6" ng-show="!tipo">
+          <label class="control-label">Tipo investigacion: <strong class="fg_red">*</strong></label>
+          <select class="form-control" name="tipo_inv" ng-model="proyecto.tipo_inv" ng-change="opcion_otro(proyecto.tipo_inv)" >
+            <option value="Otro">Otro</option>
+            <option value="opcion 1">Opcion 1</option>
+            <option value="opcion 2">Opcion 3</option>
+            <option value="opcion 3">Opcion 4</option>
+            <option value="opcion 4">Opcion 5</option>
+          </select>
+          <span class="messages" ng-show="addProyecto.$submitted || addProyecto.tipo_inv.$touched">
+          <span ng-show="addProyecto.tipo_inv.$error.required">El campo es obligatorio.</span>
+                 </span>
+        </div>
+
+        <div class="col-md-6" ng-show="tipo">
+          <label class="control-label">Tipo investigacion: <strong class="fg_red">*</strong></label>
+
                 <div class="form-group">
-                  <label for="tipo_inv" class="control-label">Tipo inversion: <strong class="fg_red">*</strong></label>
-                  <input class="form-control" name="tipo_inv" type="text" ng-model="proyecto.tipo_inv" ng-model-options="{ updateOn: 'blur' }" required ng-pattern="patternCadenaNumero" autofocus>
+                  <input type="text" class="form-control" name="tipo_inv" ng-model="proyecto.tipo_inv" ng-model-options="{ updateOn: 'blur' }" required ng-pattern="patternCadenaNumero">
                   <span class="messages" ng-show="addProyecto.tipo_inv.$touched">
                   <span ng-show="addProyecto.tipo_inv.$error.required">El campo es obligatorio.</span>
                   </span>
                 </div>
-            </div>    
+            </div>
+
             <div class="col-md-6">
                 <div class="form-group">
-                  <label for="obj_gen" class="control-label">Objetivo General: <strong class="fg_red">*</strong></label>
+                  <label  class="control-label">Objetivo General: <strong class="fg_red">*</strong></label>
                   <input type="text" class="form-control" name="obj_gen" ng-model="proyecto.obj_gen" ng-model-options="{ updateOn: 'blur' }" required ng-pattern="patternCadenaNumero" >
                   <span class="messages" ng-show="addProyecto.obj_gen.$touched">
                   <span ng-show="addProyecto.obj_gen.$error.required">El campo es obligatorio.</span>
@@ -94,7 +111,7 @@
           <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                  <label for="alcace" class="control-label">Alcance: <strong class="fg_red">*</strong></label>
+                  <label class="control-label">Alcance: <strong class="fg_red">*</strong></label>
                   <input class="form-control" name="alcance" type="text" ng-model="proyecto.alcance" ng-model-options="{ updateOn: 'blur' }" required ng-pattern="patternCadenaNumero" autofocus>
                   <span class="messages" ng-show="addProyecto.alcance.$touched">
                   <span ng-show="addProyecto.alcance.$error.required">El campo es obligatorio.</span>
@@ -103,7 +120,7 @@
             </div>    
             <div class="col-md-6">
                 <div class="form-group">
-                  <label for="poblacion" class="control-label">Poblacion: <strong class="fg_red">*</strong></label>
+                  <label  class="control-label">Poblacion: <strong class="fg_red">*</strong></label>
                   <input type="text" class="form-control" name="poblacion" ng-model="proyecto.poblacion" ng-model-options="{ updateOn: 'blur' }" required ng-pattern="patternCadenaNumero" >
                   <span class="messages" ng-show="addProyecto.poblacion.$touched">
                   <span ng-show="addProyecto.poblacion.$error.required">El campo es obligatorio.</span>
@@ -115,7 +132,7 @@
           <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                  <label for="porc_ejec" class="control-label">Porcentaje de ejecucion: <strong class="fg_red">*</strong></label>
+                  <label class="control-label">Porcentaje de ejecucion: <strong class="fg_red">*</strong></label>
                   <input class="form-control" name="porc_ejec" type="text" ng-model="proyecto.porc_ejec" ng-model-options="{ updateOn: 'blur' }" required ng-pattern="patternCadenaNumero" autofocus>
                   <span class="messages" ng-show="addProyecto.porc_ejec.$touched">
                   <span ng-show="addProyecto.porc_ejec.$error.required">El campo es obligatorio.</span>
@@ -124,7 +141,7 @@
             </div>    
             <div class="col-md-6">
                 <div class="form-group">
-                  <label for="area_proy" class="control-label">Area del Proyecto: <strong class="fg_red">*</strong></label>
+                  <label class="control-label">Area del Proyecto: <strong class="fg_red">*</strong></label>
                   <input type="text" class="form-control" name="area_proy" ng-model="proyecto.area_proy" ng-model-options="{ updateOn: 'blur' }" required ng-pattern="patternCadenaNumero" >
                   <span class="messages" ng-show="addProyecto.area_proy.$touched">
                   <span ng-show="addProyecto.area_proy.$error.required">El campo es obligatorio.</span>
@@ -136,7 +153,7 @@
            <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                  <label for="circunscripcion" class="control-label">Circunscripcion: <strong class="fg_red">*</strong></label>
+                  <label  class="control-label">Circunscripcion: <strong class="fg_red">*</strong></label>
                   <input class="form-control" name="circunscripcion" type="text" ng-model="proyecto.circunscripcion" ng-model-options="{ updateOn: 'blur' }" required ng-pattern="patternCadenaNumero" autofocus>
                   <span class="messages" ng-show="addProyecto.circunscripcion.$touched">
                   <span ng-show="addProyecto.circunscripcion.$error.required">El campo es obligatorio.</span>
@@ -145,8 +162,8 @@
             </div>    
             <div class="col-md-6">
                 <div class="form-group">
-                  <label for="doc_pdf" class="control-label">Documento: <strong class="fg_red">*</strong></label>
-                  <input type="file" class="form-control" name="doc_pdf" ng-model="proyecto.doc_pdf" ng-model-options="{ updateOn: 'blur' }" required ng-pattern="patternCadenaNumero" >
+                  <label class="control-label">Documento: <strong class="fg_red">*</strong></label>
+                  <input type="file" class="form-control" name="doc_pdf" ng-model="proyecto.doc_pdf">
                   <span class="messages" ng-show="addProyecto.doc_pdf.$touched">
                   <span ng-show="addProyecto.doc_pdf.$error.required">El campo es obligatorio.</span>
                   </span>
@@ -157,7 +174,7 @@
           <div class="row">
         
             <div class="col-md-6">
-              <label for="comentarios" class="control-label">Resumen: <strong class="fg_red">*</strong></label>
+              <label class="control-label">Resumen: <strong class="fg_red">*</strong></label>
               <textarea class="form-control" name="resumen" rows="6" cols="35" placeholder="Resumen" style="resize: vertical;min-height:70px;max-height: 150px;" ng-model="proyecto.resumen" ng-model-options="{ updateOn: 'blur' }" required ng-pattern="patternCadenaNumero" ></textarea>
               <span class="messages" ng-show="addProyecto.resumen.$touched"><br>
                 <span ng-show="addProyecto.resumen.$error.required">El campo es obligatorio.</span>
@@ -173,7 +190,7 @@
          <div class="row">
             <div class="col-md-6"  >
                 
-                  <label for="nombre_usuario" class="control-label">Jefe del Proyecto: <strong class="fg_red">*</strong></label>
+                  <label class="control-label">Jefe del Proyecto: <strong class="fg_red">*</strong></label>
                    <select class="form-control " name="id_usuario" ng-model="proyecto.id_usuario"  ng-options="usuario.id as usuario.nombres+' '+usuario.ap_pat+' '+usuario.ap_mat for usuario in usuario track by usuario.id_usuario" required>
                   <option value="">--Elige opcion--</option>
                   </select>
