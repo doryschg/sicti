@@ -101,8 +101,7 @@ $scope.submit =function()
       });
   }
 
-    $scope.tipo=false;
-
+  $scope.tipo=false;
   $scope.opcion_otro= function(tipo_inv)
   {
     console.log(tipo_inv+"tipo investigacion");
